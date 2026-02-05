@@ -7,12 +7,32 @@ import {
   clearGallery,
   showLoader,
   hideLoader,
+  showLoadMoreButton,
+  hideLoadMoreButton,
 } from './js/render-functions.js';
 
 const form = document.querySelector('.form');
 const input = document.querySelector('input[name="search-text"]');
 
+let query = '';
+let page = 1;
+const perPage = 15;
+
+function loadImages() {
+  showLoader();
+  getImagesByQuery(query, page).then(data => {
+    const { hits, totalHits } = data;
+
+    if (hits.length === 0) {
+    }
+
+    const totalPages = Math.ceil(totalHits / 15);
+  });
+}
+
 form.addEventListener('submit', event => {
+  hideLoadMoreButton();
+
   event.preventDefault();
   const query = input.value.trim();
 
@@ -25,8 +45,7 @@ form.addEventListener('submit', event => {
 
   clearGallery();
   showLoader();
-
-  getImagesByQuery(query)
+  getImagesByQuery(query, page)
     .then(data => {
       if (data.hits.length === 0) {
         iziToast.warning({
