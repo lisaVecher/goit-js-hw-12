@@ -15,6 +15,9 @@ const form = document.querySelector('.form');
 const input = document.querySelector('input[name="search-text"]');
 const btn = document.querySelector('.load-more');
 
+hideLoadMoreButton();
+hideLoader();
+
 let query = '';
 let page = 1;
 const perPage = 15;
@@ -22,7 +25,6 @@ let totalPages = 0;
 
 async function loadImages() {
   showLoader();
-
   try {
     const data = await getImagesByQuery(query, page);
     const { hits, totalHits } = data;

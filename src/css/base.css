@@ -249,9 +249,7 @@ main:has(.back-link) {
   }
 }
 
-.is-hidden {
-  display: none;
-}
+
 
 .form-btn-container {
   display: flex;
@@ -280,6 +278,10 @@ main:has(.back-link) {
   letter-spacing: 0.04em;
   color: #fff;
   border: none
+}
+
+.is-hidden {
+  display: none;
 }
 
 .load-more:hover {
