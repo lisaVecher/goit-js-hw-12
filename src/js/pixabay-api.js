@@ -1,9 +1,8 @@
 import axios from 'axios';
 
 axios.defaults.baseURL = 'https://pixabay.com/api/';
-let limit = 15;
 
-export function getImagesByQuery(query, page) {
+export async function getImagesByQuery(query, page) {
   return axios
     .get(``, {
       params: {
@@ -12,7 +11,7 @@ export function getImagesByQuery(query, page) {
         image_type: 'photo',
         orientation: 'horizontal',
         safesearch: true,
-        per_page: limit,
+        per_page: 15,
         page,
       },
     })

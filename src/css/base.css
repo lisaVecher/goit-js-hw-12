@@ -127,6 +127,10 @@ main:has(.back-link) {
   border-style: none;
 }
 
+.form-button:hover {
+  background: #6c8cff;
+}
+
 .form-input {
   border: 1px solid #808080;
   border-radius: 4px;
@@ -247,4 +251,37 @@ main:has(.back-link) {
 
 .is-hidden {
   display: none;
+}
+
+.form-btn-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.load-more {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 10px;
+
+  border-radius: 8px;
+  padding-block: 8px;
+  padding-inline: 16px;
+  width: 125px;
+  height: 40px;
+
+  background: #4e75ff;
+
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: #fff;
+  border: none
+}
+
+.load-more:hover {
+  background: #6c8cff;
 }
